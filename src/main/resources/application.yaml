@@ -1,0 +1,30 @@
+server:
+  port: 8080
+
+spring:
+  datasource:
+    url: ${DB_CONNECTION}
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
+
+  jpa:
+    hibernate:
+      ddl_auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        jdbc:
+          time_zone: Asia/Ho_Chi_Minh
+
+mqtt:
+  broker: ${BROKER_URL}
+  clientId: speaker-verification
+  username: ${BROKER_USERNAME}
+  password: ${BROKER_PASSWORD}
+
+security:
+  api-key:
+    get: ${GET_API_KEY}
+    post: ${POST_API_KEY}
+    put: ${PUT_API_KEY}
+    delete: ${DELETE_API_KEY}
