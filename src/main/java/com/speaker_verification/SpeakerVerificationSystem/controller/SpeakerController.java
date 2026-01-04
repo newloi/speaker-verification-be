@@ -40,11 +40,10 @@ public class SpeakerController {
     }
 
     @GetMapping
-    ApiResponse<List<SpeakerResponse>> getAllSpeakers(@PageableDefault(sort = "fullName", direction = Sort.Direction.ASC)
-                                                      Pageable pageable) {
+    ApiResponse<List<SpeakerResponse>> getAllSpeakers() {
         return ApiResponse.<List<SpeakerResponse>>builder()
                 .statusCode(HttpStatus.OK.value())
-                .data(speakerService.getAll(pageable))
+                .data(speakerService.getAll())
                 .build();
     }
 

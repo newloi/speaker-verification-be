@@ -50,8 +50,8 @@ public class SpeakerService {
         return speakerMapper.toSpeakerResponse(speaker);
     }
 
-    public List<SpeakerResponse> getAll(Pageable pageable) {
-        return speakerRepository.findAll(pageable).stream().map(speakerMapper::toSpeakerResponse).toList();
+    public List<SpeakerResponse> getAll() {
+        return speakerRepository.findAllByOrderByFullNameAsc().stream().map(speakerMapper::toSpeakerResponse).toList();
     }
 
     public SpeakerResponse update(String id, SpeakerRequest speakerRequest) {
